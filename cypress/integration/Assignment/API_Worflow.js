@@ -58,7 +58,7 @@ describe("API Testing",function(){
             retryOnStatusCodeFailure: false
         });
 
-        cy.log('server is down for this request gettting 503')
+        //cy.log('server is down for this request gettting 503')
     //   cy.request({
     //     method: 'PUT',
     //     url: 'https://thinking-tester-contact-list.herokuapp.com/contacts/',
