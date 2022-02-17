@@ -1,0 +1,22 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/cypress run",
+    "headTest": "npm run test --  --headed",
+    "chromeTest":"npm run test -- --browse chrome --parallel",
+    "recordDashboardTest":"npm run test --record --key 14850ee4-5474-48ad-a52c-2f0eec36962d --reporter mochawesome",
+    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.5.0",
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^9.0.3",
+    "mochawesome": "^5.2.0"
+  },
+  "dependencies": {}
+}

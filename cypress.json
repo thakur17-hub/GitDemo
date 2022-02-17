@@ -1,0 +1,14 @@
+{
+  "deafultCommandTimeout": 9000,
+  "pageLoadTimeout": 10000,
+  "reporter": "mochawesome",
+  "env": {
+    "url": "http://automationpractice.com/index.php"
+  },
+  "retries": {
+
+    "runMode": 1
+
+  }
+}
+
