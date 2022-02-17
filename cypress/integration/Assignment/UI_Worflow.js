@@ -26,7 +26,27 @@ describe(' My first Test Suit', function()
        var sum=0
        cy.get("tr td:nth-child(4)").each(($el,index,$list) => {
         cy.log($el.text());
-        const amount=$el.text()
+        const amount=$el.text();
+      //   if (amount.length>60)
+      //   {
+      //     var res=amount.split('$');
+      //     var amt=res[2].split('-');
+      //     var finalamt=amt[0].trim();
+      //     cy.log(finalamt);
+      //     var res1=parseFloat(finalamt);
+      //  sum=sum+res1
+      //   }
+      //   else {
+      //     var res=amount.split('$');
+      //     var amt=res[1].split('-');
+      //     var finalamt=amt[0].trim();
+      //     cy.log(finalamt);
+      //     var res1=parseFloat(finalamt);
+      //     sum=sum+res1
+      //   }
+      //  }).then(function() {
+      //       cy.log(sum);
+      // });
         var res=amount.split('$');
         var amt=res[1].split('-');
         var finalamt=amt[0].trim();
@@ -45,8 +65,8 @@ describe(' My first Test Suit', function()
       })
     });
 
-    it('Uploading file', function() {
-        cy.visit('http://automationpractice.com/index.php?controller=contact');
+    // it('Uploading file', function() {
+    //     cy.visit('http://automationpractice.com/index.php?controller=contact');
 
-    });
+    // });
 });

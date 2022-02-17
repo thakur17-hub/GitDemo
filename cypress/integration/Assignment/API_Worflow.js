@@ -1,12 +1,34 @@
 describe("API Testing",function(){
     it("Testing related to url",function(){
-
+        var i=20;
         cy.visit('https://thinking-tester-contact-list.herokuapp.com/');
-        cy.get('#email').type('thakurdy17@gmail.com');
-        cy.get('#password').type('SangeetaSai@17');
-        cy.get('#submit').click();
-        cy.wait(2000);
       
+        cy.request({
+            method: 'POST',
+            url: 'https://thinking-tester-contact-list.herokuapp.com/contacts',
+             headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjBlNDM4NTI1NjMzNDAwMTUyYTc4MDYiLCJpYXQiOjE2NDUxMDE5NTd9.kMbw_CP0pih9yhdeAXaiQ_1doydtGejqwDlvyh9Yvkw',
+             },
+             body: {
+                "firstName": "user"+i,
+                "lastName": "test"+i,
+                "email": "demouser"+i+"@gmail.com",
+                "password": "Siemens2019@"
+             },
+            retryOnNetworkFailure: true,
+            retryOnStatusCodeFailure: false
+        }).its('status').should('eq',201);
+            i++;
+
+            cy.request({
+                method: 'GET',
+                url: 'https://thinking-tester-contact-list.herokuapp.com/users/me',
+                 headers: {
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjBlNDM4NTI1NjMzNDAwMTUyYTc4MDYiLCJpYXQiOjE2NDUxMDE5NTd9.kMbw_CP0pih9yhdeAXaiQ_1doydtGejqwDlvyh9Yvkw',
+                 },
+                retryOnNetworkFailure: true,
+                retryOnStatusCodeFailure: false
+            }).its('status').should('eq',200);
 
             cy.request({
                method: 'POST',
@@ -87,10 +109,5 @@ describe("API Testing",function(){
     //     expect(response.body.email).equal('jdoe1234@fake.com');
     // });
 
-    });
-
-    
-       
-       
-  
+    }); 
 }) ;

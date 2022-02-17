@@ -6,9 +6,7 @@
     "url": "http://automationpractice.com/index.php"
   },
   "retries": {
-
     "runMode": 1
-
-  }
+  },
+  "projectId": "9nmgz4"
 }
-
